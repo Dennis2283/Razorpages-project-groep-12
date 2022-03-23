@@ -1,3 +1,4 @@
+site.css
 html {
   font-size: 14px;
 }
@@ -16,3 +17,22 @@ html {
 body {
   margin-bottom: 60px;
 }
+.navbar{
+  display: flex;
+}
+.nav-reg{
+  right: 0;
+}
+.card{
+  display: flex;
+  flex-direction: row;
+}
+
+.card img{
+  width: 30%;
+}
+.btn-group{
+  display: flex;
+  justify-content: space-between;
+}
+

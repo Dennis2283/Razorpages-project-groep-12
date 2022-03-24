@@ -10,7 +10,7 @@ public class DbConnection
         return new MySqlConnection(
             "Server=127.0.0.1,;Port = 3306;" +
             "Database=StripboekenWebApp;" +
-            "Uid=Admin;Pwd=Test@1;"
+            "Uid=dennis;Pwd=password;"
         );
     }
 }

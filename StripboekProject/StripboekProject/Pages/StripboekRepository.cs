@@ -14,7 +14,8 @@ public class StripboekRepository
             "Uid=dennis;Pwd=password;"
         );
     }
-
+/* Connection aanroepen en met dapper Query uitvoeren
+    Hij pakt het stripboek wat het meest overeenkomt met de titel van wat je invoert*/
     public List<Stripboek> Search(string search)
     {
         using var connection = Connect();

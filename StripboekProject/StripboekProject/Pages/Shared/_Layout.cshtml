@@ -14,31 +14,31 @@
 
    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" href="/">Stripboek.nl</a>
+            <a class="navbar-brand text-light" asp-page="Home">Stripboek.nl</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="Home">Home</a>
+                        <a class="nav-link text-light" aria-current="page" asp-page="Home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="MijnStripboeken">Mijn Stripboeken</a>
+                        <a class="nav-link text-light" asp-page="MijnStripboeken">Mijn Stripboeken</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="Zoeken">Zoeken</a>
+                        <a class="nav-link text-light" asp-page="Zoeken">Zoeken</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="UpcomingReleases">Upcoming Releases</a>
+                        <a class="nav-link text-light" asp-page="UpcomingReleases">Upcoming Releases</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="Login">Login</a></li>
-                            <li><a class="dropdown-item" href="Register">Register</a></li>
+                            <li><a class="dropdown-item" asp-page="Login">Login</a></li>
+                            <li><a class="dropdown-item" asp-page="Register">Register</a></li>
                         </ul>
                     </li>
                 </ul>

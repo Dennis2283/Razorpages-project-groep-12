@@ -23,8 +23,5 @@ public class StripboekRepository
             search = "%" + search + "%"
         });
         return stripboeken.ToList();
-        
-            
-        
     }
 }

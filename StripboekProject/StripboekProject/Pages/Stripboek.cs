@@ -1,5 +1,5 @@
 namespace StripboekProject.Pages;
-
+/* Stripboek table */
 public class Stripboek
 {
     public int StripId { get; set; }

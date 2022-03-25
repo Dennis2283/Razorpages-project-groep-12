@@ -32,6 +32,11 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" href="UpcomingReleases">Upcoming Releases</a>
                 </li>
+                <form class="d-flex" method="get" asp-page="/SearchResult">
+                    <input class="form-control me-2" name="Search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">

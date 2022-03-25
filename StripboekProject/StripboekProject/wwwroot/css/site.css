@@ -1,13 +1,12 @@
+site.css
 html {
   font-size: 14px;
 }
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
-
 html {
   position: relative;
   min-height: 100%;
@@ -15,4 +14,23 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+.navbar{
+  display: flex;
+}
+.nav-reg{
+  right: 0;
+}
+.card{
+  display: flex;
+  flex-direction: row;
+}
+
+.card img{
+  width: 30%;
+}
+.btn-group{
+  display: flex;
+  justify-content: space-between;
 }

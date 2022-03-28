@@ -8,7 +8,7 @@ public class Stripboek
     public string Serie { get; set; }
     public int Serienummer { get; set; }
     public string Uitgave { get; set; }
-    public int Dikete_mm { get; set; }
+    public int Dikte_mm { get; set; }
     public int Lengte_mm { get; set; }
     public int Breedte_mm { get; set; }
     public bool NSFW { get; set; }

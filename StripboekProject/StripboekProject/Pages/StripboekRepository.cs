@@ -1,5 +1,7 @@
 using System.Data;
 using Dapper;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Connections.Features;
 using MySql.Data.MySqlClient;
 
 namespace StripboekProject.Pages;
@@ -27,5 +29,23 @@ public class StripboekRepository
         
             
         
+    }
+
+    public Stripboek Add(Stripboek stripboek)
+    {
+        using var connection = Connect();
+        int numRowsEffected = connection.Execute
+        ("INSERT INTO Stripboeken(StripId, Titel, Aantal_blz, Serie, Serienummer, Uitgave, Dikte_mm, Lengte_mm, Breedte_mm, NSFW, Digitaal, Verified) VALUES(@StripId, @Titel, @Aantal_blz, @Serie, @Serienummer, @Uitgave, @Dikte_mm, @Lengte_mm, @Breedte_mm, @NSFW, @Digitaal, @Verified)"
+            , new {StripId = stripboek.StripId, Titel = stripboek.Titel, Aantal_blz = stripboek.Aantal_blz, Serie = stripboek.Serie, Serienummer = stripboek.Serienummer, Uitgave = stripboek.Uitgave, Dikte_mm = stripboek.Dikte_mm, Lengte_mm = stripboek.Lengte_mm, Breedte_mm = stripboek.Breedte_mm, NSFW = stripboek.NSFW, Digitaal = stripboek.Digitaal, Verified = stripboek.Verified});
+
+        if (numRowsEffected == 1)
+        {
+            var newStripboek =
+                connection.QuerySingle<Stripboek>("SELECT * FROM Stripboek WHERE StripId = LAST_INSERT_ID()");
+            //LAST_INSERTED_ID is de automatisch gegenereerde ID in de Query, wanneer er een insert wordt gedaan dan weten we onze PK(StripId)
+            return newStripboek;
+        }
+
+        return null;
     }
 }

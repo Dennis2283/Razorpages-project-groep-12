@@ -1,67 +1,26 @@
-using System.Data;
-using Dapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MySql.Data.MySqlClient;
 
 namespace StripboekProject.Pages;
 
 public class Zoeken : PageModel
 {
+    [BindProperty(SupportsGet = true)] public string Search { get; set; }
+    
 
-    public List<Stripboek> Stripboeken
-    {
-        get
-        {
-            return (List<Stripboek>) new Zoekenlist().Get();
-            
-        }
-    }
+    public List<Stripboek> stripboeken { get; set; }
+    
+    
 
-    public List<Auteur> Auteurs
+    public IActionResult
+        OnGet(string Search) /* als dit word aangeroepen dan laat die de Searchresult.cshtml pagina zien */
     {
-        get
-        {
-            return new Zoekenlist().Get1();
-        }
+        var stripboek = new StripboekRepository();
+        stripboeken = stripboek.Search(Search);
+        
+        return Page();
+
     }
     
-    public List<Stripboek> Stripboeken2
-    {
-        get
-        {
-            return (List<Stripboek>) new Zoekenlist().Get2();
-            
-        }
-    }
     
-    public List<Auteur> Auteurs2
-    {
-        get
-        {
-            return new Zoekenlist().Get3();
-        }
-    }
-    
-    public List<Stripboek> Stripboeken3
-    {
-        get
-        {
-            return (List<Stripboek>) new Zoekenlist().Get4();
-            
-        }
-    }
-    
-    public List<Auteur> Auteurs3
-    {
-        get
-        {
-            return new Zoekenlist().Get5();
-        }
-    }
-
-
-    public void OnGet()
-    {
-
-    }
 }

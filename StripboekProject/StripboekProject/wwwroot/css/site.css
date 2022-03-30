@@ -34,8 +34,26 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.table{
-  text-align: left;
-  padding: 5px;
+.\.tableZoeken{
   
+  padding: 20px;
+  border: 1px solid;
+  text-align: center;
+  
+}
+
+.\.tdZoeken{
+  border: #6a1a21;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+  border-spacing: 5px;
+  
+}
+
+thead {
+  background-color: gray;
+  color: white;
 }

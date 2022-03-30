@@ -5,154 +5,47 @@
     Layout = "Shared/_Layout";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <title>Search</title>
-</head>
-<body>
-
-<div>
-    <form class="input-group mt-4" method="get" asp-page="/SearchResult">
-        <input type="search" class="form-control rounded" name="Search" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-        <button type="submit" class="btn btn-outline-primary">search</button>
-    </form>
+<div class="input-group mt-4">
+    <input type="search" class="form-control rounded" name="Search" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+    <button type="submit" class="btn btn-outline-primary">search</button>
 </div>
+<!-- Table met daaronder de tabel inhoud en dat haalt hij op uit Stripboek.cs -->
+<div class="card mt-4"> 
+    
+    <table class=".tableZoeken">
 
-<div class="btn-group">
-    <div class="dropdown mt-4">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Search By
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item">Stripboeknaam</a></li>
-            <li><a class="dropdown-item">Categorie</a></li>
-            <li><a class="dropdown-item">Serienummer</a></li>
-            <li><a class="dropdown-item">Auteur/Tekenaar</a></li>
-        </ul>
-    </div>
-
-    <div class="dropdown mt-4">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Order By
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item">A-Z</a></li>
-            <li><a class="dropdown-item">Aantal Bladzijden(meest-minst)</a></li>
-        </ul>
-    </div>
-</div>
-
-
-<div class="card mt-4">
-    <table class="table">
-         @foreach (var c in Model.Stripboeken)
-         {
-
-
-             <tr>
-                 <th>Titel:</th>
-                 <td>@c.Titel</td>
-             </tr>
-             <tr>
-             <th>Serie:</th>
-             <td>@c.Serie</td>
-            </tr>             
-             <th>Uitgave:</th>
-             <td>@c.Uitgave</td>
-             <tr>
-                 <th>Aantal Bladzijden:</th>
-                 <td>@c.Aantal_blz</td>
-             </tr>
-             
-             <tr>
-                 <th>Dikte mm, Wijdte mm, Hoogte mm:</th>
-                 <td>@c.Dikte_mm, @c.Breedte_mm, @c.Lengte_mm</td>
-
-             </tr>
-         }
-         @foreach (var b in Model.Auteurs)
-         {
-             <tr>
-                 <th>Auteur en/of tekenaar:</th>
-                 <td>@b.Auteur_naam</td>
-             </tr>
-         }
+        <tr class=".tableZoeken">
+            <th>Titel</th>
+            <th>StripId </th>
+            <th>Aantal Bladzijden </th>
+            <th>Serie </th>
+            <th>Serienummer </th>
+            <th>Uitgave </th>
+            <th>Dikte mm </th>
+            <th>Lengte mm </th>
+            <th>Breedte mm </th>
+            <th>NSFW </th>
+            <th>Digitaal </th>
+            <th>Verified </th>
+        </tr>
+        @foreach (var c in Model.stripboeken)
+        {
+            <tr>
+                <td>@c.Titel</td>
+                <td>@c.StripId</td>
+                <td>@c.Aantal_blz</td>
+                <td>@c.Serie</td>
+                <td>@c.Serienummer</td>
+                <td>@c.Uitgave</td>
+                <td>@c.Dikte_mm</td>
+                <td>@c.Lengte_mm</td>
+                <td>@c.Breedte_mm</td>
+                <td>@c.NSFW</td>
+                <td>@c.Digitaal</td>
+                <td>@c.Verified</td>
+            </tr>
+        }
     </table>
-</div>
-<div class="card mt-4">
-    <table class="table">
-             @foreach (var c in Model.Stripboeken2)
-             {
     
-    
-                 <tr>
-                     <th>Titel:</th>
-                     <td>@c.Titel</td>
-                 </tr>
-                 <tr>
-                 <th>Serie:</th>
-                 <td>@c.Serie</td>
-                </tr>             
-                 <th>Uitgave:</th>
-                 <td>@c.Uitgave</td>
-                 <tr>
-                     <th>Aantal Bladzijden:</th>
-                     <td>@c.Aantal_blz</td>
-                 </tr>
-                 
-                 <tr>
-                     <th>Dikte mm, Wijdte mm, Hoogte mm:</th>
-                     <td>@c.Dikte_mm, @c.Breedte_mm, @c.Lengte_mm</td>
-    
-                 </tr>
-             }
-             @foreach (var b in Model.Auteurs2)
-             {
-                 <tr>
-                     <th>Auteur en/of tekenaar:</th>
-                     <td>@b.Auteur_naam</td>
-                 </tr>
-             }
-        </table>
 </div>
-<div class="card mt-4">
-    <table class="table">
-                 @foreach (var c in Model.Stripboeken3)
-                 {
-        
-        
-                     <tr>
-                         <th>Titel:</th>
-                         <td>@c.Titel</td>
-                     </tr>
-                     <tr>
-                     <th>Serie:</th>
-                     <td>@c.Serie</td>
-                    </tr>             
-                     <th>Uitgave:</th>
-                     <td>@c.Uitgave</td>
-                     <tr>
-                         <th>Aantal Bladzijden:</th>
-                         <td>@c.Aantal_blz</td>
-                     </tr>
-                     
-                     <tr>
-                         <th>Dikte mm, Wijdte mm, Hoogte mm:</th>
-                         <td>@c.Dikte_mm, @c.Breedte_mm, @c.Lengte_mm</td>
-        
-                     </tr>
-                 }
-                 @foreach (var b in Model.Auteurs3)
-                 {
-                     <tr>
-                         <th>Auteur en/of tekenaar:</th>
-                         <td>@b.Auteur_naam</td>
-                     </tr>
-                 }
-            </table>
-</div>
-
-</body>
-</html> 

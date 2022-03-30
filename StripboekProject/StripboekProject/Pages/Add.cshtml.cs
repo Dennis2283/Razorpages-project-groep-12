@@ -5,6 +5,7 @@ namespace StripboekProject.Pages;
 
 public class Add : PageModel
 {
+    [BindProperty]
     public Stripboek NewStripboek { get; set; }
     public string Msg { get; set; }
     
@@ -22,6 +23,6 @@ public class Add : PageModel
 
         Msg = "Nieuw stripboek succesvol toegevoegd! ";
         new StripboekRepository().Add(NewStripboek);
-        return Page();
+        return RedirectToPage("SearchResult");
     }
 }

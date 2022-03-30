@@ -5,6 +5,7 @@ namespace StripboekProject.Pages;
 
 public class Add : PageModel
 {
+    [BindProperty]
     public Stripboek NewStripboek { get; set; }
     public string Msg { get; set; }
     

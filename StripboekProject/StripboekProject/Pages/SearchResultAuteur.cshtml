@@ -1,0 +1,32 @@
+@page
+@model StripboekProject.Pages.SearchResultAuteur
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+<div>
+    <h1>Resultaten:</h1>
+    <p>Zoek opdracht: @Model.Search2</p> 
+    
+    <table class="table">
+        <tr>
+            <th>Auteur naam</th>
+            <th>Serie</th>
+            <th>Auteur ID</th>
+            <th>Strip ID</th>
+        </tr>
+        
+        
+        @foreach (var A in Model.Auteurs)
+        {
+            <tr>
+                <td>@A.Auteur_naam</td>
+                <td>@A.Serie</td>
+                <td>@A.Auteur_Id</td>
+                <td>@A.Strip_Id</td>
+            </tr>
+        }
+        
+    </table>
+</div>

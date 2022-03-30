@@ -13,9 +13,11 @@
 </head>
 <body>
 
-<div class="input-group mt-4">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-    <button type="button" class="btn btn-outline-primary">search</button>
+<div>
+    <form class="input-group mt-4" method="get" asp-page="/SearchResult">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+        <button type="submit" class="btn btn-outline-primary">search</button>
+    </form>
 </div>
 
 <div class="btn-group">

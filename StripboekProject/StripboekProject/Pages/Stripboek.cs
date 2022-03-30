@@ -7,6 +7,7 @@ namespace StripboekProject.Pages;
 /* Stripboek table */
 public class Stripboek
 {
+    [Required(ErrorMessage = "StripId is verplicht")]
     public int StripId { get; set; }
     [Required(ErrorMessage = "Titel is verplicht. ")]
     public string Titel { get; set; }

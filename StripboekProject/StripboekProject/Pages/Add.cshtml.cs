@@ -20,7 +20,7 @@ public class Add : PageModel
             return Page();
         }
 
-        Msg = "Nieuw stripboek succesvol teogevoegd!";
+        Msg = "Nieuw stripboek succesvol toegevoegd! ";
         new StripboekRepository().Add(NewStripboek);
         return Page();
     }

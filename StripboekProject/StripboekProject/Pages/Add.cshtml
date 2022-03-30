@@ -4,64 +4,85 @@
 @{
     Layout = "Shared/_Layout";
 }
-@Model.Msg
-<form method="post">
-    <table class="container">
-        <tr class="row mt-4">
-            <td>Titel:</td>
-            <td><input type="text" asp-for="NewStripboek.Titel"/></td>
-            <span asp-validation-for="NewStripboek.Titel"></span>
-        </tr>
-        <tr class="row mt-4">
-            <td>Aantal bladzijden:</td>
-            <td><input type="text" asp-for="NewStripboek.Aantal_blz"/></td>
-            <span asp-validation-for="NewStripboek.Aantal_blz"></span>
-        </tr>
-        <tr class="row mt-4">
-            <td>Serie:</td>
-            <td><input type="text" asp-for="NewStripboek.Serie"/></td>
-            <span asp-validation-for="NewStripboek.Serie"></span>
-        </tr>
-        <tr class="row mt-4">
-            <td>Serienummer:</td>
-            <td><input type="text" asp-for="NewStripboek.Serienummer"/></td>
-            <span asp-validation-for="NewStripboek.Serienummer"></span>
-        </tr>
-        <tr class="row mt-4">
-            <td>Uitgave:</td>
-            <td><input type="text" asp-for="NewStripboek.Uitgave"/></td>
-            <span asp-validation-for="NewStripboek.Uitgave"></span>
-        </tr>
-        <tr class="row mt-4">
-            <td>Dikte in millimeter:</td>
-            <td><input type="text" asp-for="NewStripboek.Dikte_mm"/></td>
-            <span asp-validation-for="NewStripboek.Dikte_mm"></span>
-        </tr>
-        <tr class="row mt-4">
-            <td>Lengte in millimeter:</td>
-            <td><input type="text" asp-for="NewStripboek.Lengte_mm"/></td>
-            <span asp-validation-for="NewStripboek.Lengte_mm"></span>
-        </tr>
-        <tr class="row mt-4">
-            <td>Breedte in millimeter:</td>
-            <td><input type="text" asp-for="NewStripboek.Breedte_mm"/></td>
-            <span asp-validation-for="NewStripboek.Breedte_mm"></span>
-        </tr>
-        <tr>
-            <td>NSFW:</td>
-            <td><input type="checkbox" asp-for="NewStripboek.NSFW"/></td>
-            <span asp-validation-for="NewStripboek.NSFW"></span>
-        </tr>
-        <tr>
-            <td>Digitaal:</td>
-            <td><input type="checkbox" asp-for="NewStripboek.Digitaal"/></td>
-            <span asp-validation-for="NewStripboek.Digitaal"></span>
-        </tr>
-        <tr>
-            <td>Verified:</td>
-            <td><input type="checkbox" asp-for="NewStripboek.Verified"/></td>
-            <span asp-validation-for="NewStripboek.Verified"></span>
-        </tr>
-        <tr><td><button class="btn btn-primary" type="submit">Add</button></td></tr>
-    </table>
-</form>
+
+<section class="bg-dark w-100" >
+    <div class="mask d-flex align-items-center h-100">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="w-75">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Add Stripboek</h2>
+                            @Model.Msg
+                            <form method="post">
+                                <table class="container">
+                                    <tr class="row mt-4">
+                                        <td>*Titel:</td>
+                                        <td><input type="text" asp-for="NewStripboek.Titel"/></td>
+                                        <span asp-validation-for="NewStripboek.Titel"></span>
+                                    </tr>
+                                    <tr class="row mt-4">
+                                        <td>*StripId:</td>
+                                        <td><input type="text" asp-for="NewStripboek.StripId"/></td>
+                                        <span asp-validation-for="NewStripboek.StripId"></span>
+                                    </tr>
+                                    <tr class="row mt-4">
+                                        <td>Aantal bladzijden:</td>
+                                        <td><input type="text" asp-for="NewStripboek.Aantal_blz"/></td>
+                                        <span asp-validation-for="NewStripboek.Aantal_blz"></span>
+                                    </tr>
+                                    <tr class="row mt-4">
+                                        <td>Serie:</td>
+                                        <td><input type="text" asp-for="NewStripboek.Serie"/></td>
+                                        <span asp-validation-for="NewStripboek.Serie"></span>
+                                    </tr>
+                                    <tr class="row mt-4">
+                                        <td>*Serienummer:</td>
+                                        <td><input type="text" asp-for="NewStripboek.Serienummer"/></td>
+                                        <span asp-validation-for="NewStripboek.Serienummer"></span>
+                                    </tr>
+                                    <tr class="row mt-4">
+                                        <td>Uitgave:</td>
+                                        <td><input type="text" asp-for="NewStripboek.Uitgave"/></td>
+                                        <span asp-validation-for="NewStripboek.Uitgave"></span>
+                                    </tr>
+                                    <tr class="row mt-4">
+                                        <td>Dikte in millimeter:</td>
+                                        <td><input type="text" asp-for="NewStripboek.Dikte_mm"/></td>
+                                        <span asp-validation-for="NewStripboek.Dikte_mm"></span>
+                                    </tr>
+                                    <tr class="row mt-4">
+                                        <td>Lengte in millimeter:</td>
+                                        <td><input type="text" asp-for="NewStripboek.Lengte_mm"/></td>
+                                        <span asp-validation-for="NewStripboek.Lengte_mm"></span>
+                                    </tr>
+                                    <tr class="row mt-4">
+                                        <td>Breedte in millimeter:</td>
+                                        <td><input type="text" asp-for="NewStripboek.Breedte_mm"/></td>
+                                        <span asp-validation-for="NewStripboek.Breedte_mm"></span>
+                                    </tr>
+                                    <tr>
+                                        <td>NSFW:</td>
+                                        <td><input type="checkbox" asp-for="NewStripboek.NSFW"/></td>
+                                        <span asp-validation-for="NewStripboek.NSFW"></span>
+                                    </tr>
+                                    <tr>
+                                        <td>Digitaal:</td>
+                                        <td><input type="checkbox" asp-for="NewStripboek.Digitaal"/></td>
+                                        <span asp-validation-for="NewStripboek.Digitaal"></span>
+                                    </tr>
+                                    <tr>
+                                        <td>Verified:</td>
+                                        <td><input type="checkbox" asp-for="NewStripboek.Verified"/></td>
+                                        <span asp-validation-for="NewStripboek.Verified"></span>
+                                    </tr>
+                                    <tr><td><button class="btn btn-primary" type="submit">Add</button></td></tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

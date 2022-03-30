@@ -22,4 +22,5 @@ public class Stripboek
     public bool NSFW { get; set; }
     public bool Digitaal { get; set; }
     public bool Verified { get; set; }
+
 }

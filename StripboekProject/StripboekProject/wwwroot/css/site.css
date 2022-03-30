@@ -34,5 +34,8 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
-
+.table{
+  text-align: left;
+  padding: 5px;
+  
+}

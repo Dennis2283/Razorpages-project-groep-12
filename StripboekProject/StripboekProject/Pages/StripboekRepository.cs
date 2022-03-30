@@ -26,9 +26,6 @@ public class StripboekRepository
             search = "%" + search + "%"
         });
         return stripboeken.ToList();
-        
-            
-        
     }
 
     public Stripboek Add(Stripboek stripboek)

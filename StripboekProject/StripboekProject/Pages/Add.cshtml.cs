@@ -23,6 +23,6 @@ public class Add : PageModel
 
         Msg = "Nieuw stripboek succesvol toegevoegd! ";
         new StripboekRepository().Add(NewStripboek);
-        return Page();
+        return RedirectToPage("SearchResult");
     }
 }

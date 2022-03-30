@@ -9,9 +9,11 @@
     <div class="text-center">
         <h1 class="display-4">Welcome to Stripboeken.nl</h1>
     </div>
-    <div class="input-group mt-4">
-        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-        <button type="button" class="btn btn-outline-primary">search</button>
+    <div> 
+        <form class="input-group mt-4" method="get" asp-page="/SearchResult" >
+        <input type="search" class="form-control rounded" name="Search" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+        <button class="btn btn-outline-primary" type="submit" >search</button>
+        </form>
     </div>
 </div>
 

@@ -10,18 +10,14 @@ namespace StripboekProject.Pages;
 
 public class Register : PageModel
 {
-    private IDbConnection Connect() 
+    public IDbConnection Connect()
     {
-        return new MySqlConnection(
-            "Server=127.0.0.1,;Port = 3306;" +
-            "Database=StripboekenWebApp;" +
-            "Uid=root;Pwd=;"
-        );
-        // HEEL BELANGRIJK check de namen van de data
+        return new MySqlConnection
+            ("Server=127.0.0.1,;Port=3306;Database=stripboekenwebapp;Uid=root;Pwd=;");
     }
     
     [BindProperty]
-    public Account account { get; set; }
+    public account profile { get; set; }
     
     public void OnGet()
     {
@@ -30,15 +26,11 @@ public class Register : PageModel
 
     public void OnPost()
     {
-        
+        using var connection = Connect();
+        int rowAffected = connection.Execute(
+            "INSERT INTO stripboekenwebapp.account (Naam, Wachtwoord) VALUES (@Naam, @Wachtwoord)"
+            , new {Naam = profile.Naam, Wachtwoord = profile.Wachtwoord});
     }
     
-    public void OnPostCreate()
-    {
-        if (ModelState.IsValid)
-        { 
-            // als input wordt geacepteerd wordt het deze input data verwerkt in de account table van de database
-            new StripboekRepository().Add(account);
-        }
-    }
+    
 }

@@ -10,28 +10,52 @@ namespace StripboekProject.Pages;
 
 public partial class Login : PageModel
 {
-    private IDbConnection Connect() 
+    public IDbConnection Connect()
     {
-        return new MySqlConnection(
-            "Server=127.0.0.1,;Port = 3306;" +
-            "Database=StripboekenWebApp;" +
-            "Uid=root;Pwd=;"
-        );
+        return new MySqlConnection
+            ("Server=127.0.0.1,;Port=3306;Database=stripboekenwebapp;Uid=root;Pwd=;");
     }
     
     [BindProperty]
-    public MadeAccount profile { get; set; }
+    public account profile { get; set; }
     public void OnGet()
     {
 
     }
 
-    public void OnPost()
+    public IActionResult Find()
+    {
+        using var connection = Connect();
+        var account = connection.QuerySingleOrDefault<account>(
+            "SELECT * FROM stripboekenwebapp.account WHERE Naam = @Naam AND Wachtwoord = @Wachtwoord",
+            new {Naam = profile.Naam, Wachtwoord = profile.Wachtwoord});
+        if (account != null)
+        {
+            return OnPostSucces();
+        }
+        else
+        {
+            return OnPostFailure();
+        }
+    }
+    
+    public IActionResult OnPostSucces()
+    {
+        return RedirectToPage("Home");
+    }
+
+    public IActionResult OnPostFailure()
+    {
+        return RedirectToPage("Login");
+    }
+    
+    public IActionResult OnPost()
     {
         if (ModelState.IsValid)
         {
-            // als input wordt geacepteerd wordt er gecheckt in de database en doorverwezen als dit succesvol is
-            new StripboekRepository().SignIn(profile);
+            return Find();
         }
+
+        return Page();
     }
 }

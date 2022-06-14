@@ -9,9 +9,7 @@ public class AuteurRepository
     private IDbConnection Connect()
     {
         return new MySqlConnection(
-            "Server=127.0.0.1;Port=3306;" +
-            "Database=StripboekenWebApp;" +
-            "Uid=dennis;Pwd=password;"
+            "Server=127.0.0.1;Port=3306;Database=StripboekenwebApp;Uid=root;Pwd=;"
         );
     }
 /* Connection aanroepen en met dapper Query uitvoeren
@@ -19,7 +17,7 @@ public class AuteurRepository
     public List<Auteur> Search2(string search2)
     {
         using var connection = Connect();
-        var  auteurs= connection.Query<Auteur>("SELECT * FROM StripboekenWebApp.Auteur WHERE Auteur_naam LIKE @search2", new
+        var  auteurs= connection.Query<Auteur>("SELECT * FROM Auteur WHERE Auteur_naam LIKE @search2", new
         {
             search2 = "%" + search2 + "%"
         });

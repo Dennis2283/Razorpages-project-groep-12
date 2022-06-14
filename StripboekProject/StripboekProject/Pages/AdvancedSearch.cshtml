@@ -1,0 +1,56 @@
+@page
+@model StripboekProject.Pages.AdvancedSearch
+
+@{
+   Layout = "Shared/_Layout";
+}
+
+<!DOCTYPE html>
+
+<div class="above">
+
+    <div class="text-center">
+        <h1 class="display-4"></h1>
+    </div>
+    <div>
+        <div class="text center">
+            <h1 class="display-4"> Zoek op Stripboeken</h1>
+        </div>
+        <form class="input-group mt-4" method="get" asp-page="/SearchResult">
+            <input type="search" class="form-control rounded" name="Search" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+            <button class="btn btn-outline-primary" type="submit">search</button>
+        </form>
+    </div>
+</div>
+
+<div class="Above">
+    
+    <div class="text-center">
+        <h1 class="display-4"></h1>
+    </div>
+    <div>
+        <div class="text center">
+            <h1 class="display-4"> Zoek op Auteur</h1>
+        </div>
+        <form class="input-group mt-4" method="get" asp-page="/SearchResultAuteur">
+            <input type="search" class="form-control rounded" name="Search2" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+            <button class="btn btn-outline-primary" type="submit">search</button>
+        </form>
+    </div>
+</div>
+
+<div class="Above">
+    
+    <div class="text-center">
+        <h1 class="display-4"></h1>
+    </div>
+    <div>
+        <div class="text center">
+            <h1 class="display-4"> Zoek op Tekenaar, Auteur en Stripboek</h1>
+        </div>
+        <form class="input-group mt-4" method="get" asp-page="/SearchResultJoin">
+            <input type="search" class="form-control rounded" name="Search3" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+            <button class="btn btn-outline-primary" type="submit">search</button>
+        </form>
+    </div>
+</div>

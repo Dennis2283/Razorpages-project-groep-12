@@ -1,0 +1,34 @@
+@page
+@model StripboekProject.Pages.SearchResultJoin
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+<div>
+    <h1>Resultaten:</h1>
+    <p>Zoek opdracht: @Model.Search3</p> 
+    
+    <table class="table">
+        <tr>
+            <th>tekenaar_naam</th>
+            <th>Auteur naam</th>
+            <th></th>
+        </tr>
+        
+        @foreach (var T in Model.Tekenaars)
+        {
+            <tr>
+                <td>@T.Tekenaar_naam</td>
+                
+            </tr>
+        }
+        @foreach (var a in Model.Auteurs)
+        {
+            <tr>
+                <td>@a.Auteur_naam</td>
+            </tr>
+        }
+        
+    </table>
+</div>

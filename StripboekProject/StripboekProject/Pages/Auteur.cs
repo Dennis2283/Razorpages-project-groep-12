@@ -1,3 +1,5 @@
+using Org.BouncyCastle.Bcpg.OpenPgp;
+
 namespace StripboekProject.Pages;
 
 public class Auteur
@@ -7,4 +9,6 @@ public class Auteur
     public string Serie { get; set; }
     public int Strip_Id { get; set; }
 
+    
 }
+

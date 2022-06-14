@@ -19,7 +19,7 @@ public class IndexModel : PageModel
     public void OnGet()
     {
         var connection = new MySqlConnection(
-            "Server=127.0.0.1;Database=StripboekenWebApp;Uid=dennis;Pwd=password;Port=3306"
+            "Server=127.0.0.1;Database=StripboekenwebApp;Uid=root;Pwd=;Port=3306"
         );
 
  
